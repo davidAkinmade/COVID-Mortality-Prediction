@@ -1,0 +1,49 @@
+  
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>COVID Mortality</h1>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <button type="submit" class="btn btn-primary btn-block btn-small">Estimate number of days to die</button>
+    	<input type="text" name="sex" placeholder="sex" required="required" />
+        <input type="text" name="pneumonia" placeholder="pneumonia" required="required" />
+        <input type="text" name="age category" placeholder="age category" required="required" />
+        <input type="text" name="diabetes" placeholder="diabetes" required="required" />
+	<input type="text" name="hypertension" placeholder="hypertension" required="required" />
+        <input type="text" name="obesity" placeholder="obesity" required="required" />
+        <input type="text" name="contact_other_covid" placeholder="contact_other_covid" required="required" />
+        <input type="text" name="icu" placeholder="icu" required="required" />
+	<input type="text" name="date_symptoms_month" placeholder="date_symptoms_month" required="required" />
+        <input type="text" name="date_symptoms_week" placeholder="date_symptoms_week" required="required" />
+        <input type="text" name="date_symptoms_day" placeholder="date_symptoms_day" required="required" />
+	<input type="text" name="date_symptoms_dayofweek" placeholder="date_symptoms_dayofweek" required="required" />
+        <input type="text" name="ed_year" placeholder="ed_year" required="required" />
+        <input type="text" name="ed_month" placeholder="ed_month" required="required" />
+	<input type="text" name="ed_week" placeholder="ed_week" required="required" />
+        <input type="text" name="ed_dayofweek" placeholder="ed_dayofweek" required="required" />
+        
+    </form>
+
+
+ </div>
+</body>
+</html>
